@@ -1,0 +1,13 @@
+# Secrets and credential
+.env
+*.env
+
+# CLI / Executables
+kubectl
+*.tar.gz
+*.gz
+*.zip
+
+# OS Files
+.DS_Store
+Thumbs.db
