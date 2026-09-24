@@ -38,3 +38,10 @@ In a live production deployment, relying on an in-memory cache requires implemen
 ### Problems Encountered & Solved
 1. **YAML Syntax Errors:** Corrected indentation for environment variables in `backend-deployment.yaml`.
 2. **Rahti Authentication:** Resolved CLI authentication errors by fetching a fresh session token via the Rahti Web Console ("Copy login command").
+
+### Evidence Screenshots
+#### OpenShift/Rahti Pods & Services Status
+![OpenShift Status](screenshots/oc-status.png)
+
+#### Redis Cache Endpoint Live Verification
+![Redis Cache Live](screenshots/redis-web.png)

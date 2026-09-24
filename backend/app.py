@@ -59,7 +59,6 @@ def index():
 
 @app.route('/api/cache')
 def cache_demo():
-    # Increment counter in memory
     views = cache.incr('page_views')
     
     return f"""
@@ -69,12 +68,12 @@ def cache_demo():
         <meta charset="UTF-8">
         <title>Weekly Assignment 5 - Redis Cache</title>
         <style>
-            body {{ font-family: Arial, sans-serif; margin: 40px; line-height: 1.6; color: #333; max-width: 800px; }}
+            body {{ font-family: Arial, sans-serif; margin: 40px; line-height: 1.6; color: #333; max-width: 900px; }}
             h1 {{ color: #2c3e50; border-bottom: 2px solid #2c3e50; padding-bottom: 10px; }}
             .card {{ background: #eef9f1; border-left: 5px solid #28a745; padding: 15px; margin: 20px 0; }}
             .info-box {{ background: #f8f9fa; border: 1px solid #ddd; padding: 15px; border-radius: 5px; }}
             a {{ color: #007bff; text-decoration: none; font-weight: bold; }}
-            a:hover {{ text-decoration: underline; }}
+            img {{ max-width: 100%; height: auto; border: 1px solid #ccc; border-radius: 5px; margin-top: 10px; }}
         </style>
     </head>
     <body>
@@ -93,11 +92,17 @@ def cache_demo():
             </ul>
         </div>
 
-        <h3>Part B - Implementation Summary</h3>
-        <p>This extension runs an independent <code>redis:alpine</code> container and service inside CSC Rahti on port 6379 alongside the Nginx frontend, Flask backend, and MySQL database.</p>
+        <h3>Part B - Implementation Evidence</h3>
+        <p>Below are the cluster status and endpoint verification screenshots:</p>
+        
+        <h4>1. OpenShift / Rahti Cluster Status (Pods & Services)</h4>
+        <img src="https://raw.githubusercontent.com/anasaemd25/cloud-services-assignment-5/main/screenshots/oc-status.png" alt="OpenShift Status">
+
+        <h4>2. Live Redis Cache Verification</h4>
+        <img src="https://raw.githubusercontent.com/anasaemd25/cloud-services-assignment-5/main/screenshots/redis-web.png" alt="Redis Web Page">
     </body>
     </html>
     """
-    
+        
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=8000)
