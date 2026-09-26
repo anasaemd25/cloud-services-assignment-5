@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: backend
-        image: anasaemd/three-tier-backend:v5
+        image: anasaemd/three-tier-backend:v6
         ports:
         - containerPort: 8000
         envFrom:
