@@ -62,12 +62,9 @@ containers:
   image: redis:alpine
   command: ["redis-server"]
   args: ["--save", ""]
-
+```
 
 ### Implementation Evidence
-
-#### 1. OpenShift/Rahti OC Status
-![OpenShift Status](screenshots/oc-status.png)
 
 #### 1. OpenShift/Rahti Cluster Status (Pods & Services)
 ![Cluster Status](screenshots/Evidence-Pod-Services.png)
