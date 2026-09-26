@@ -96,9 +96,9 @@ def cache_demo():
                     <h3>Architecture & Extension Overview</h3>
                     <p>This page serves as Part B of Assignment 5. It extends the 3-tier architecture built during Week 4 (Nginx frontend, Flask backend, MySQL database) by introducing an isolated, high-performance caching layer using Redis.</p>
                     <ul>
-                        <li><strong>Component Type:</strong> Independent Kubernetes Deployment and Service (<code>redis-service:6379</code>)[cite: 3, 8].</li>
-                        <li><strong>Data Pattern:</strong> Ephemeral key-value counter (<code>INCR page_views</code>)[cite: 3, 7].</li>
-                        <li><strong>Main Application (Week 4 Baseline):</strong> <a href="/">Return to Week 4 MySQL Main Page</a>[cite: 3, 7]</li>
+                        <li><strong>Component Type:</strong> Independent Kubernetes Deployment and Service (<code>redis-service:6379</code>).</li>
+                        <li><strong>Data Pattern:</strong> Ephemeral key-value counter (<code>INCR page_views</code>).</li>
+                        <li><strong>Main Application (Week 4 Baseline):</strong> <a href="/">Return to Week 4 MySQL Main Page</a></li>
                         <li><strong>GitHub Repository:</strong> <a href="https://github.com/anasaemd25/cloud-services-assignment-5" target="_blank">anasaemd25/cloud-services-assignment-5</a></li>
                     </ul>
                 </div>
@@ -108,7 +108,7 @@ def cache_demo():
                 <div class="evidence-section">
                     <h3>1. Cluster Status Verification (OpenShift Pods & Services)</h3>
                     <div class="evidence-desc">
-                        <strong>Explanation:</strong> This terminal screenshot proves that the Redis extension runs as a distinct, standalone pod (`redis-78d4d78c69-tk8sk`) alongside the original Week 4 services[cite: 3, 8]. It also demonstrates that `redis-service` correctly exposes port `6379` internally to the cluster[cite: 3, 8].
+                        <strong>Explanation:</strong> This terminal screenshot proves that the Redis extension runs as a distinct, standalone pod (`redis-78d4d78c69-tk8sk`) alongside the original Week 4 services. It also demonstrates that `redis-service` correctly exposes port `6379` internally to the cluster.
                     </div>
                     <img src="https://raw.githubusercontent.com/anasaemd25/cloud-services-assignment-5/main/screenshots/Evidence-Pod-Services.png" alt="OpenShift Status Verification">
                 </div>
@@ -116,7 +116,7 @@ def cache_demo():
                 <div class="evidence-section">
                     <h3>2. Week 4 Baseline Verification (MySQL Application)</h3>
                     <div class="evidence-desc">
-                        <strong>Explanation:</strong> This screenshot confirms that adding the Redis caching extension did not break or disrupt the original Week 4 core application[cite: 3, 7]. The primary frontend continues to communicate with the Flask API and the persistent MySQL database seamlessly[cite: 3, 7].
+                        <strong>Explanation:</strong> This screenshot confirms that adding the Redis caching extension did not break or disrupt the original Week 4 core application. The primary frontend continues to communicate with the Flask API and the persistent MySQL database seamlessly.
                     </div>
                     <img src="https://raw.githubusercontent.com/anasaemd25/cloud-services-assignment-5/main/screenshots/Week4-Evidence.png" alt="Week 4 Baseline Application">
                 </div>
@@ -124,7 +124,7 @@ def cache_demo():
                 <div class="evidence-section">
                     <h3>3. Live Endpoint & Cache Verification</h3>
                     <div class="evidence-desc">
-                        <strong>Explanation:</strong> This screenshot verifies the live web interface of the `/api/cache` route[cite: 3, 7, 14]. It shows the real-time incrementing counter powered by Redis in-memory storage[cite: 3, 7].
+                        <strong>Explanation:</strong> This screenshot verifies the live web interface of the `/api/cache` route. It shows the real-time incrementing counter powered by Redis in-memory storage.
                     </div>
                     <img src="https://raw.githubusercontent.com/anasaemd25/cloud-services-assignment-5/main/screenshots/redis-web.png" alt="Redis Web Interface Verification">
                 </div>
