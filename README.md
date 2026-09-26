@@ -3,6 +3,7 @@
 ## Live Application & Repository Links
 
 - **Live Redis Cache Endpoint (Week 5 Extension):** https://frontend-cloud-services-assignment-2.2.rahtiapp.fi/api/cache
+- **Assignment 4 Origin:** https://frontend-cloud-services-assignment-2.2.rahtiapp.fi/
 - **Main Application (Week 4 Baseline):** https://frontend-cloud-services-assignment-2.2.rahtiapp.fi/
 - **GitHub Repository:** https://github.com/anasaemd25/cloud-services-assignment-5
 
