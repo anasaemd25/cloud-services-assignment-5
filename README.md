@@ -13,15 +13,15 @@
 
 ### 1. What is YAML and why has it become the default configuration format for Kubernetes/Rahti manifests? Compare it briefly to JSON.
 
-YAML (YAML Ain't Markup Language) is a human readable data serialization standard commonly used for configuration files. It became the default option for Kubernetes and Rahti because its clean structure relies on line indentation instead than brackets or commas, making the complex cluster definitions easier to read and maintain. Unlike JSON, YAML supports comments and has a minimal syntax. Behind the scenes, Kubernetes converts YAML manifests into JSON before applying them.
+YAML (YAML Ain't Markup Language) is a human readable data serialization standard commonly used for configuration files. It became the default option for Kubernetes and Rahti because its clean structure relies on line indentation rather than brackets or commas, making the complex cluster definitions easier to read and maintain. Unlike JSON, YAML supports comments and has a minimal syntax. Behind the scenes, Kubernetes converts YAML manifests into JSON before applying them.
 
 ### 2. What is a Web Application Firewall (WAF) and what kinds of attacks does it defend against? Where would you place one in the three-container architecture built in Week 4?
 
-A Web Application Firewall inspects and filters incoming HTTP/HTTPS traffic to block malicious exploits before they reach the web application. It defends against OWASP top threats like SQL Injection, Cross-Site Scripting (XSS), and automated bot attacks. In the Week 4 architecture (`Route → Frontend → Backend → Database`), a WAF would be placed at the edge of the network,right before or integrated into the public Route/Frontend, protecting Nginx and Flask from direct application layer attacks.
+A Web Application Firewall inspects and filters incoming HTTP/HTTPS traffic to block malicious exploits before they reach the web application. It defends against OWASP top threats like SQL Injection, Cross-Site Scripting (XSS), and automated bot attacks. In the Week 4 architecture (`Route → Frontend → Backend → Database`), a WAF would be placed at the edge of the network, right before or integrated into the public Route/Frontend, protecting Nginx and Flask from direct application layer attacks.
 
 ### 3. Explain the difference between SAML and OAuth. When would a company choose one over the other?
 
-Security Assertion Markup Language is an XML based framework focused on **Authentication** (verifying identity) for Enterprise Single Sign-On (SSO). OAuth is an open standard focused on **Authorization** (for granting access permissions without sharing user credentials). A company chooses SAML for internal corporate login systems across employee software, but OAuth is chosen when building web applications that allow users to sign in via 3rd party providers (like MIcrosoft or Google) or when managing API access tokens
+Security Assertion Markup Language (SAML) is an XML based framework focused on **Authentication** (verifying identity) for Enterprise Single Sign-On (SSO). OAuth is an open standard focused on **Authorization** (for granting access permissions without sharing user credentials). A company chooses SAML for internal corporate login systems across employee software, but OAuth is chosen when building web applications that allow users to sign in via 3rd party providers (like Microsoft or Google) or when managing API access tokens.
 
 ### 4. What are open data portals and why does choosing the right open-data format matter for reuse?
 
@@ -42,7 +42,7 @@ Both the baseline Week 4 stack (Frontend, Backend, MySQL DB) and the new Redis e
 - `oc get pods`: Shows `backend`, `frontend`, `mysql`, and `redis` pods in `Running` state.
 - `oc get svc`: Confirms `redis-service` exposes port `6379` internally to the cluster.
 
-_(Place your terminal screenshot here: `screenshots/oc-status.png`)_
+![Cluster Status Output](screenshots/oc-status.png)
 
 ### 3. Verification of Week 4 Baseline
 
@@ -63,15 +63,3 @@ containers:
   image: redis:alpine
   command: ["redis-server"]
   args: ["--save", ""]
-```
-
-### Implementation Evidence
-
-#### 1. OpenShift/Rahti Cluster Status (Pods & Services)
-![Cluster Status](screenshots/Evidence-Pod-Services.png)
-
-#### 2. Week 4 Baseline Application Verification (MySQL)
-![Week 4 Baseline](screenshots/Week4-Evidence.png)
-
-#### 3. Redis Cache Endpoint Verification
-![Redis Cache Live](screenshots/redis-web.png)
